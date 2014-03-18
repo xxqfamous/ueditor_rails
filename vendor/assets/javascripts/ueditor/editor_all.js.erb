@@ -5922,7 +5922,6 @@
           range.setStartAfter(img).setCursor(false, true);
           me.execCommand('insertimage', opt);
         }
-
       } else {
         var html = [], str = '', ci;
         ci = opt[0];
@@ -5932,6 +5931,8 @@
                   (ci.height ? ' height="' + ci.height + '" ' : '') +
                   (ci['floatStyle'] == 'left' || ci['floatStyle'] == 'right' ? ' style="float:' + ci['floatStyle'] + ';"' : '') +
                   (ci.title && ci.title != "" ? ' title="' + ci.title + '"' : '') +
+                  (ci.id && ci.id != "" ? ' data-pid="' + ci.id + '"' : '') +
+                  (ci.id && ci.id != "" ? ' id="' + ci.id + '"' : '') +
                   (ci.border && ci.border != "0" ? ' border="' + ci.border + '"' : '') +
                   (ci.alt && ci.alt != "" ? ' alt="' + ci.alt + '"' : '') +
                   (ci.hspace && ci.hspace != "0" ? ' hspace = "' + ci.hspace + '"' : '') +
@@ -5948,7 +5949,8 @@
                     (ci.height ? ' height="' + ci.height + '" ' : '') +
                     ' style="' + (ci['floatStyle'] && ci['floatStyle'] != 'center' ? 'float:' + ci['floatStyle'] + ';' : '') +
                     (ci.border || '') + '" ' +
-                    (ci.title ? ' title="' + ci.title + '"' : '') + ' /></p>';
+                    (ci.title ? ' title="' + ci.title + '"' : '') + 
+                    (ci.id ? ' id="' + ci.id + '"' : '') + ' /></p>';
             html.push(str);
           }
         }

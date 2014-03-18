@@ -283,7 +283,7 @@ var imageUploader = {},
   /**
    * 插入多张图片
    */
-  function insertBatch() {
+  function insertBatch() {   
     if (imageUrls.length < 1) return;
     var imgObjs = [],
             align = findFocus("localFloat", "name");
@@ -291,9 +291,10 @@ var imageUploader = {},
     for (var i = 0, ci; ci = imageUrls[i++];) {
       var tmpObj = {};
       tmpObj.title = ci.title;
+      tmpObj.id = ci.id;
       tmpObj.floatStyle = align;
       //修正显示时候的地址数据,如果后台返回的是图片的绝对地址，那么此处无需修正
-      tmpObj.data_ue_src = tmpObj.src = editor.options.imagePath + ci.url;
+      tmpObj.data_ue_src = tmpObj.src = editor.options.imagePath + ci.url;      
       imgObjs.push(tmpObj);
     }
     insertImage(imgObjs);

@@ -5949,7 +5949,8 @@
                     (ci.height ? ' height="' + ci.height + '" ' : '') +
                     ' style="' + (ci['floatStyle'] && ci['floatStyle'] != 'center' ? 'float:' + ci['floatStyle'] + ';' : '') +
                     (ci.border || '') + '" ' +
-                    (ci.title ? ' title="' + ci.title + '"' : '') + 
+                    (ci.title ? ' title="' + ci.title + '"' : '') +
+                    (ci.id && ci.id != "" ? ' data-pid="' + ci.id + '"' : '') + 
                     (ci.id ? ' id="' + ci.id + '"' : '') + ' /></p>';
             html.push(str);
           }

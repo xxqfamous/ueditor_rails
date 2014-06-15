@@ -7268,6 +7268,11 @@
     }
   };
 
+  UE.commands['insertinput'] = {
+    execCommand: function (cmd) {
+      this.execCommand('insertHtml', '<input type=\'text\' style=\'width:120px;display:inline\' class=\'insertinput\'/>');
+    }
+  };
 
 ///import core
 ///import plugins\paragraph.js
@@ -17647,7 +17652,7 @@
       'blockquote', 'pasteplain', 'pagebreak',
       'selectall', 'print', 'preview', 'horizontal', 'removeformat', 'time', 'date', 'unlink',
       'insertparagraphbeforetable', 'insertrow', 'insertcol', 'mergeright', 'mergedown', 'deleterow',
-      'deletecol', 'splittorows', 'splittocols', 'splittocells', 'mergecells', 'deletetable'];
+      'deletecol', 'splittorows', 'splittocols', 'splittocells', 'mergecells', 'deletetable','insertinput'];
 
     for (var i = 0, ci; ci = btnCmds[i++];) {
       ci = ci.toLowerCase();
@@ -17679,7 +17684,7 @@
         };
       }(ci);
     }
-
+    
     //清除文档
     editorui.cleardoc = function (editor) {
       var ui = new editorui.Button({

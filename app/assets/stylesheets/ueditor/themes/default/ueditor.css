@@ -1454,6 +1454,9 @@ div.edui-box {
 }
 /*?????????*/
 /*??????????*/
+.edui-for-insertinput .edui-icon {
+    background-position: -700px -40px;
+}
 .edui-default .edui-for-emotion .edui-icon {
     background-position: -60px -20px;
 }
